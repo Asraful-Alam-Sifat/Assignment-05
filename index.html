@@ -31,6 +31,8 @@
 </head>
 <body class=" bg-base-200 py-24">
     <section class="max-w-xl mx-auto bg-base-100 p-8 rounded-2xl">
+
+<!-- Header -->
         <header class="flex flex-col justify-center items-center gap-y-5 mb-8">
         <img class="w-24 h-24"  src="assets/github-logo.png" alt="Github-logo">
 
@@ -41,20 +43,39 @@
         
     </header> 
 
+<!-- Main -->
     <main>
          <fieldset class="fieldset">
           <label class="label font-medium text-base text-(--primary-text-color)">Username</label>
-          <input type="email" class="input w-full mb-6" placeholder="Enter Username" />
+          <input type="email" id="username" class="input w-full mb-6" placeholder="Enter Username" />
 
           <label class="label font-medium text-base text-(--primary-text-color)">Password</label>
-          <input type="password" class="input w-full mb-6" placeholder="Enter Password" />
+          <input type="password" id="password" class="input w-full mb-6" placeholder="Enter Password" />
 
-          <button class="btn btn-neutral mt-4 bg-primary border-none">Sign In</button>
+          <button onclick="signIn()" class="btn btn-neutral mt-4 bg-primary border-none">Sign In</button>
         </fieldset>
     </main>
+
+    <div class="flex items-center my-6">
+       <div class="flex-grow border-t border-gray-300"></div>
+       <span class="flex-shrink mx-3 text-(--primay-text-color) text-base">OR</span>
+       <div class="flex-grow border-t border-gray-300"></div>
+    </div>
+
+ <!-- Footer -->
+    <footer>
+        <p class="text-(--sub-text-color) font-normal text-sm text-center mb-4">Demo Credentials:</p>
+
+        <div class="bg-base-200 rounded-md px-36 py-8">
+            <p class="font-bold text-base ">Username: <span class="font-medium text-(--sub-text-color)">admin</span></p>
+            <p class="font-bold text-base">Password: <span class="font-medium text-(--sub-text-color)">admin123</span></p>
+        </div>
+    </footer>
 
     </section>
    
   
+ <!-- script Files -->
+     <script src="script/login.js"></script>
 </body>
 </html>
