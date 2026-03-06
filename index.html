@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Tailwind & DaisyUI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- Geist Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+        font-family: "Geist", sans-serif;
+       box-sizing: border-box;
+    }
+        :root{
+            --primary-text-color: #1f2937;
+            --sub-text-color: #64748b;
+        }
+    </style>
+
 </head>
-<body>
-    
+<body class=" bg-base-200 py-24">
+    <section class="max-w-xl mx-auto bg-base-100 p-8 rounded-2xl">
+        <header class="flex flex-col justify-center items-center gap-y-5 mb-8">
+        <img class="w-24 h-24"  src="assets/github-logo.png" alt="Github-logo">
+
+        <div>
+            <h1 class="text-(--primary-text-color) text-2xl font-semibold text-center mb-1">GitHub Issues Tracker</h1>
+        <h5 class="text-center font-normal text-base text-(--sub-text-color)">Sign in to manage your issues</h5>
+        </div>
+        
+    </header> 
+
+    <main>
+         <fieldset class="fieldset">
+          <label class="label font-medium text-base text-(--primary-text-color)">Username</label>
+          <input type="email" class="input w-full mb-6" placeholder="Enter Username" />
+
+          <label class="label font-medium text-base text-(--primary-text-color)">Password</label>
+          <input type="password" class="input w-full mb-6" placeholder="Enter Password" />
+
+          <button class="btn btn-neutral mt-4 bg-primary border-none">Sign In</button>
+        </fieldset>
+    </main>
+
+    </section>
+   
+  
 </body>
 </html>
