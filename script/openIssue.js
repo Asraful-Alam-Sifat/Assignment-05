@@ -1,31 +1,14 @@
+    
+    
+const displayOpenIssues = (data) => {
 
 
+        const openIssue = data.filter(obj => obj.status.toLowerCase() === "open");
 
-const loadAllIssues = () => {
-    const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+       
 
-    fetch(url)
-    .then(res => res.json())
-    .then(data =>{
-         displayIssues(data.data)
-        allIssueCount(data);
-        displayOpenIssues(data.data)
-        displayclosedIssues(data.data)
-    })
 
-    const allIssueCount = (ary) => {
-        
-        const allIssues = document.getElementById("issues-count");
-        allIssues.innerText = ary.data.length;    
-        
-    }
-}
-
-const displayIssues= (issues) => {
-    const allIssuesContainer = document.getElementById("all-issue-container");
-    allIssuesContainer.innerHTML = "";
-
-    issues.forEach(issue => {
+         openIssue.forEach(issue => {
         const date = new Date(issue.createdAt)
         const formatedDate = date.toLocaleDateString("en-US")
 
@@ -82,16 +65,14 @@ const displayIssues= (issues) => {
                 </div>
                 </div>
         `;
-        allIssuesContainer.appendChild(newCard);
+        openContainer.appendChild(newCard);
 
 
 
 
     });
 
-
+        const closedIssue = data.filter(obj => obj.status.toLowerCase() === "closed");
+        // console.log(closedIssue);
+  
 }
-
-
-
-loadAllIssues();

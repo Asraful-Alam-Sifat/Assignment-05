@@ -17,7 +17,7 @@ const showContent = (id) => {
      clickedBtn.classList.remove("bg-white", "text-black","border-gray-200","border-2")
      clickedBtn.classList.add("menu-active","bg-primary");
 
-
+  
 
      if(id === "menu-btn-all"){
         allIssueContainer.classList.remove("hidden");
@@ -29,10 +29,15 @@ const showContent = (id) => {
         openContainer.classList.remove("hidden");
         closedContainer.classList.add("hidden");
 
+       
+
      }else if(id === "menu-btn-closed"){
         allIssueContainer.classList.add("hidden");
         openContainer.classList.add("hidden");
         closedContainer.classList.remove("hidden");
      }
+  
+
+   
 
 }
