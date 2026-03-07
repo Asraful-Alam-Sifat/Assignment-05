@@ -9,7 +9,7 @@ let password = inputPassword.value;
 
 if(username === "admin" && password === "admin123"){
     alert("Login Succesfull");
-    window.location.assign("/home.html")
+    window.location.assign("./home.html")
 }else{
     alert("Login Failed. Try Again");
 }

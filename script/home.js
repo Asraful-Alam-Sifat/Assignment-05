@@ -46,7 +46,7 @@ const displayIssues= (issues) => {
         
 
         newCard.innerHTML = `
-        <div class="bg-base-100 w-full h-[350px] rounded-lg p-5 mx-auto ">
+        <div class="issue-card bg-base-100 w-full h-[350px] rounded-lg p-5 mx-auto ">
           <div class="flex justify-between items-center mb-4">          
                     <img src="${statusIcon}" alt="">
 
