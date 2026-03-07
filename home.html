@@ -26,7 +26,8 @@
             --primary-text-color: #1f2937;
             --sub-text-color: #64748b;
 
-            --issue-color: #a855f7FF;
+            --issue-open-color:#00a96e;
+            --issue-closed-color: #a855f7FF;
         }
     </style>
 </head>
@@ -78,16 +79,17 @@
 
             <div class="flex gap-3">
                 <div class="flex items-center gap-2">
-                    <span class=" bg-green-700 w-3 h-3 rounded-full"></span>
+                    <span class=" bg-(--issue-open-color) w-3 h-3 rounded-full"></span>
                     <h4 class="font-medium text-base text-(--primary-text-color)">Open</h4>
                 </div>
                 <div class="flex gap-2 items-center">
-                    <span class="bg-(--issue-color) w-3 h-3 rounded-full "></span>
+                    <span class="bg-(--issue-closed-color) w-3 h-3 rounded-full "></span>
                     <h4 class="font-medium text-base text-(--primary-text-color)">Closed</h4>
                 </div>
             </div>
         </section>
        
+        <img src="" alt="">
         <!-- All Issue -->
          <section id="all-issue-container" class="py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
              
