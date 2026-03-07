@@ -3,7 +3,19 @@ const loadAllIssues = () => {
 
     fetch(url)
     .then(res => res.json())
-    .then(data => displayIssues(data.data))
+    .then(data =>{
+         displayIssues(data.data)
+        allIssueCount(data);
+    })
+
+    const allIssueCount = (ary) => {
+        const issuesCount = ary.data;
+        const allIssues = document.getElementById("issues-count");
+        allIssues.innerText = issuesCount.length;
+        
+    }
+
+
    
 }
 
@@ -32,7 +44,7 @@ const displayIssues= (issues) => {
         
 
         newCard.innerHTML = `
-        <div class="bg-base-100 w-full rounded-lg p-5 mx-auto ">
+        <div class="bg-base-100 w-full h-[350px] rounded-lg p-5 mx-auto ">
           <div class="flex justify-between items-center mb-4">
           
                     <img src="${statusIcon}" alt="">
@@ -73,6 +85,9 @@ const displayIssues= (issues) => {
                 </div>
         `;
         allIssuesContainer.appendChild(newCard);
+
+
+
 
     });
 

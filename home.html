@@ -57,9 +57,9 @@
 <!-- Menu section -->
  <section class="mt-16 menu-container bg-base-100 container mx-auto p-4 rounded-xl shadow-sm">
              <div class=" menu  flex flex-row gap-5">
-         <button  class="menu-active p-1 px-10 bg-primary rounded-md"><a>Item 1</a></button>
-         <button class="p-1 px-10 rounded-md border-2 border-gray-300"><a class="">Item 2</a></button>
-         <button class="p-1 px-10 rounded-md border-2 border-gray-300"><a>Item 3</a></button> 
+         <button onclick="showContent('menu-btn-all')" id="menu-btn-all"  class=" menu-active p-1 px-10 bg-primary rounded-md"><a>All</a></button>
+         <button onclick="showContent('menu-btn-open')" id="menu-btn-open" class="p-1 px-10 rounded-md border-2 border-gray-300"><a class="">Open</a></button>
+         <button onclick="showContent('menu-btn-closed')" id="menu-btn-closed" class=" p-1 px-10 rounded-md border-2 border-gray-300"><a>Closed</a></button> 
         </div>
         </section>
      </header>
@@ -67,7 +67,9 @@
      <!-- main -->
     <main class="container mx-auto">
         
-       <!-- Issue Status -->
+        <section >
+
+              <!-- Issue Status -->
         <section class="issue-status mt-5 bg-base-100 py-4 px-6 rounded-t-xl shadow-sm flex justify-between items-center">
             <div class="flex gap-2 items-center">
                    <img class="bg-purple-200 p-2 rounded-full w-12 h-12"  src="assets/Aperture.png" alt="">
@@ -88,10 +90,9 @@
                 </div>
             </div>
         </section>
-       
-        <img src="" alt="">
+
         <!-- All Issue -->
-         <section id="all-issue-container" class="py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+         <section id="all-issue-container" class="menu-btn-all py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
              
             <!-- <div class="bg-base-100 w-3/12 rounded-lg p-5 ">
                 <div class="flex justify-between items-center mb-4">
@@ -116,11 +117,25 @@
                 </div>
             </div> -->
          </section>
+        </section>
+     
+        <!-- Open Section -->
+         <section id="open-container" class="menu-btn-open hidden">
+
+         </section>
+
+         <!-- Closed Section -->
+         
+         <section id="closed-container" class="menu-btn-closed hidden">
+
+         </section>
+
 
     </main>
   
 
     <script src="script/functions.js"></script>
     <script src="script/home.js"></script>
+    <script src="script/buttonToggle.js"></script>
 </body>
 </html>
