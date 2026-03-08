@@ -12,7 +12,7 @@ const displayOpenIssues = (data) => {
         const date = new Date(issue.createdAt)
         const formatedDate = date.toLocaleDateString("en-US")
 
-        const statusIcon =
+      const statusIcon =
          issue.status.toLowerCase() === "open"
          ? "assets/Open-Status.png"
          : "assets/Closed- Status .png";

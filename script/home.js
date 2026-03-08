@@ -7,10 +7,11 @@ const loadAllIssues = () => {
     fetch(url)
     .then(res => res.json())
     .then(data =>{
-         displayIssues(data.data)
+         displayIssues(data.data);
         allIssueCount(data);
-        displayOpenIssues(data.data)
-        displayclosedIssues(data.data)
+        displayOpenIssues(data.data);
+        displayclosedIssues(data.data);
+        searchIssue(data.data);
     })
 
     const allIssueCount = (ary) => {
@@ -29,7 +30,7 @@ const displayIssues= (issues) => {
         const date = new Date(issue.createdAt)
         const formatedDate = date.toLocaleDateString("en-US")
 
-        const statusIcon =
+       const statusIcon =
          issue.status.toLowerCase() === "open"
          ? "assets/Open-Status.png"
          : "assets/Closed- Status .png";

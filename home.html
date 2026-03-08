@@ -34,7 +34,7 @@
 <body class="bg-base-300">
     <!-- header -->
      <header>
-          <div class="navbar bg-base-100 shadow-sm px-18 py-5">
+          <div class="navbar bg-base-100 shadow-sm px-18 py-5 flex flex-col gap-3 lg:flex-row">
   <div class="flex-1 flex ">
     <img class="w-10 h-10" src="assets/github-logo.png" alt="">
     <a class="btn btn-ghost text-2xl font-semibold text-(--primary-text-color)">GitHub Issues Tracker</a>
@@ -42,12 +42,12 @@
   <div class="flex gap-2 ">
     <div class=" relative inline-block">
         <i class="fa-solid fa-magnifying-glass absolute z-10 text-gray-500 top-3 left-4 "></i>
-        <input id="search" type="text" placeholder="Search" class="input input-bordered w-56 md:w-auto pl-9.5 font-semibold text-lg text-gray " />
+        <input onclick="showSearchItems('search')"  id="search" type="text" placeholder="Search" class="input input-bordered max-w-56 md:w-auto pl-9.5 font-semibold text-lg text-gray " />
     </div>
   
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-primary">
-        <button><i class="fa-solid fa-plus"></i> New Issue</button>
+        <button id="new-issue"><i class="fa-solid fa-plus"></i> New Issue</button>
       </div>
   
     </div>
@@ -67,7 +67,7 @@
      <!-- main -->
     <main class="container mx-auto">
         
-        <section >
+       
 
               <!-- Issue Status -->
         <section class="issue-status mt-5 bg-base-100 py-4 px-6 rounded-t-xl shadow-sm flex justify-between items-center">
@@ -117,7 +117,11 @@
                 </div>
             </div> -->
          </section>
-        </section>
+        
+          <!-- Search Items -->
+         <section id="search-container" class="menu-btn-open py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+
+         </section>
      
         <!-- Open Section -->
          <section id="open-container" class="menu-btn-open hidden py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
@@ -134,7 +138,9 @@
     </main>
   
 
+    <!-- Scripts File -->
     <script src="script/functions.js"></script>
+    <script src="script/search.js"></script>
     <script src="script/home.js"></script>
     <script src="script/buttonToggle.js"></script>
     <script src="script/openIssue.js"></script>
