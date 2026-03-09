@@ -2,31 +2,24 @@ let allIssuesData = [];
 
 const searchResult = document.getElementById("search-container");
 const searchBtn = document.getElementById("new-issue");
-
+const inputSearch = document.getElementById("search");
 
 const searchIssue = (data) => allIssuesData = data;
-
-const inputSearch = document.getElementById("search");
 
 inputSearch.addEventListener("input", (e) => {
     const searchInputValue = e.target.value.toLowerCase();
     
-    
     searchResult.innerHTML = '';
-    
     
     if (!searchInputValue) {
         searchResult.classList.add("hidden");        
     }
 
-  
     const filteredIssues = allIssuesData.filter(issue => 
         issue.title.toLowerCase().includes(searchInputValue)
     );
 
-    
     showSearchItems();
-
     
     if (filteredIssues.length === 0) {
         searchResult.classList.remove("grid");

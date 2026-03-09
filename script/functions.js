@@ -8,3 +8,4 @@ const showSpinner = () => {
 const hideSpinner = () => {
     loadingSpinner.classList.add("hidden");
 }
+

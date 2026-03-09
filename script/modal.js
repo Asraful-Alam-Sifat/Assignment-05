@@ -1,6 +1,5 @@
 
 const loadIssueModal = async (id) => {
-
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
     
     const res = await fetch(url);
@@ -10,7 +9,7 @@ const loadIssueModal = async (id) => {
 }
 
 const displayModal = (obj) => {
-    // console.log(obj);
+
  const date = new Date(obj.createdAt);
         const formatedDate = date.toLocaleDateString("en-US");
 
@@ -76,6 +75,6 @@ const displayModal = (obj) => {
         `;
 
         document.getElementById("issue_modal").showModal();
-    // console.log(modalContainer)
-    
+
+  
 } 

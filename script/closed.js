@@ -1,10 +1,9 @@
 
-const displayclosedIssues = (data) => {
-
+const  displayclosedIssues = (data) => {
+    closedContainer.innerHTML = "";
 
         const closeIssue = data.filter(obj => obj.status.toLowerCase() === "closed");
-            
-
+        
 
          closeIssue.forEach(issue => {
         const date = new Date(issue.createdAt)
@@ -14,8 +13,6 @@ const displayclosedIssues = (data) => {
          issue.status.toLowerCase() === "open"
          ? "assets/Open-Status.png"
          : "assets/Closed- Status .png";
-
-         
      
 
         const newCard = document.createElement("div");
@@ -64,13 +61,13 @@ const displayclosedIssues = (data) => {
         </div>
         `;
         closedContainer.appendChild(newCard);
-
-
-
-
     });
 
-        const closedIssue = data.filter(obj => obj.status.toLowerCase() === "closed");
-        // console.log(closedIssue);
+
+       const activeBtn = document.getElementById("menu-btn-closed");
+        const issuesCount =  document.getElementById("issues-count");
+    if (activeBtn.classList.contains("menu-active")) {
+        issuesCount.innerText = closeIssue.length;
+    }
   
 }

@@ -1,4 +1,6 @@
-
+const allIssueContainer = document.getElementById("all-issue-container");
+const openContainer = document.getElementById("open-container");
+const closedContainer = document.getElementById("closed-container");
 
 
 const loadAllIssues = () => {
@@ -11,23 +13,16 @@ const loadAllIssues = () => {
 
           hideSpinner();
          displayIssues(data.data);
-        allIssueCount(data);
         displayOpenIssues(data.data);
         displayclosedIssues(data.data);
         searchIssue(data.data);
     })
 
-    const allIssueCount = (ary) => {
-        
-        const allIssues = document.getElementById("issues-count");
-        allIssues.innerText = ary.data.length;    
-        
-    }
+
 }
 
 const displayIssues= (issues) => {
-    const allIssuesContainer = document.getElementById("all-issue-container");
-    allIssuesContainer.innerHTML = "";
+   allIssueContainer.innerHTML = "";
 
     issues.forEach(issue => {
         const date = new Date(issue.createdAt)
@@ -38,16 +33,13 @@ const displayIssues= (issues) => {
          ? "assets/Open-Status.png"
          : "assets/Closed- Status .png";
 
-         
-     
-
+             
         const newCard = document.createElement("div");
         
         issue.status.toLowerCase() === "open"
         ?newCard.className = `border-t-6 border-(--issue-open-color) rounded-lg`
         :newCard.className = `border-t-6 border-(--issue-closed-color) rounded-lg`
-
-        
+    
 
         newCard.innerHTML = `
         <div onclick="loadIssueModal(${issue.id})" class="issue-card bg-base-100 w-full h-full rounded-lg p-5 mx-auto ">
@@ -86,16 +78,18 @@ const displayIssues= (issues) => {
             </div>
         </div>
         `;
-        allIssuesContainer.appendChild(newCard);
-
-
+        allIssueContainer.appendChild(newCard);
 
 
     });
 
+    const activeBtn = document.querySelector(".menu-active");
+    const issuesCount =  document.getElementById("issues-count");
+    if (activeBtn && activeBtn.id === "menu-btn-all") {
+        issuesCount.innerText = issues.length;
+    }
+    
 
 }
-
-
 
 loadAllIssues();
