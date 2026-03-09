@@ -5,7 +5,7 @@ const closedContainer = document.getElementById("closed-container");
 
 const showContent = (id) => {
      const btns = ["menu-btn-all", "menu-btn-open", "menu-btn-closed"]
-
+loadAllIssues();
      for(let btn of btns){
         const button = document.getElementById(btn);
         

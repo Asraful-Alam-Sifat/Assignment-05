@@ -2,11 +2,14 @@
 
 
 const loadAllIssues = () => {
+    showSpinner();
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 
     fetch(url)
     .then(res => res.json())
     .then(data =>{
+
+          hideSpinner();
          displayIssues(data.data);
         allIssueCount(data);
         displayOpenIssues(data.data);
