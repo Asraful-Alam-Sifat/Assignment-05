@@ -54,7 +54,7 @@ inputSearch.addEventListener("input", (e) => {
             : `border-t-6 border-(--issue-closed-color) rounded-lg`;
 
           newCard.innerHTML = `
-            <div class="issue-card bg-base-100 w-full h-[350px] rounded-lg p-5 mx-auto">
+            <div onclick="loadIssueModal(${issue.id})" class="issue-card bg-base-100 w-full h-[350px] rounded-lg p-5 mx-auto">
                 <div class="flex justify-between items-center mb-4">          
                     <img src="${statusIcon}" alt="">
                     ${issue.priority.toLowerCase() === "high" 
@@ -64,7 +64,7 @@ inputSearch.addEventListener("input", (e) => {
                             : issue.priority.toLowerCase() === "low"
                                 ? `<span class="priority-badge bg-gray-200 text-gray-600 px-6 py-0.5 rounded-xl font-semibold text-xm">${issue.priority}</span>` 
                                 : ""}   
-            </div>
+                </div>
 
             <div class="card-main space-y-1 mb-5">
                 <h3 class="card-title font-semibold text-lg text-(--primary-text-color)">${issue.title}</h3>

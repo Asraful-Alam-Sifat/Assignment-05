@@ -92,7 +92,7 @@
         </section>
 
         <!-- All Issue -->
-         <section id="all-issue-container" class="menu-btn-all py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+         <section id="all-issue-container" class="menu-btn-all py-9 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-fr">
              
             <!-- <div class="bg-base-100 w-3/12 rounded-lg p-5 ">
                 <div class="flex justify-between items-center mb-4">
@@ -119,18 +119,18 @@
          </section>
         
           <!-- Search Items -->
-         <section id="search-container" class="menu-btn-open py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+         <section id="search-container" class="menu-btn-open py-3 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
 
          </section>
      
         <!-- Open Section -->
-         <section id="open-container" class="menu-btn-open hidden py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+         <section id="open-container" class="menu-btn-open hidden py-3 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
 
          </section>
 
          <!-- Closed Section -->
          
-         <section id="closed-container" class="menu-btn-closed hidden py-7 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+         <section id="closed-container" class="menu-btn-closed hidden py-3 bg-base-200 px-4  gap-4 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
 
          </section>
 
@@ -138,12 +138,31 @@
     </main>
   
 
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="modal-container">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn bg-primary text-white border-none">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
     <!-- Scripts File -->
     <script src="script/functions.js"></script>
     <script src="script/search.js"></script>
-    <script src="script/home.js"></script>
     <script src="script/buttonToggle.js"></script>
     <script src="script/openIssue.js"></script>
     <script src="script/closed.js"></script>
+    <script src="script/modal.js"></script>
+    <script src="script/home.js"></script>
 </body>
 </html>
